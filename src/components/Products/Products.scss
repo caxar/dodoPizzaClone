@@ -1,0 +1,11 @@
+@import "../../css-config/mixins.scss";
+
+.products__content {
+    margin-bottom: 50px;
+    .products-block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

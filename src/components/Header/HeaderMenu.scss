@@ -1,0 +1,108 @@
+@import "../../css-config/mixins.scss";
+
+.header-fixed {
+    width: 100%;
+    transition: all .3s ease;
+    background-color: rgba(255, 255, 255, 0.75);
+    &.scrolled-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        backdrop-filter: blur(20px);
+        box-shadow: rgba(6, 5, 50, 0.1) 0px 4px 30px;
+        animation: stickyHeaderAnimation 0.3s ease forwards;
+        z-index: 99;
+        .menu-nav__logo {
+            width: 52px;
+            padding-right: 16px;
+            svg {
+                transform: translateX(0px) !important;
+            }
+        }
+    }
+    .fixed-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .content-left {
+            display: flex;
+            align-items: center;
+            .menu-nav__logo {
+                display: inline-block;
+                vertical-align: middle;
+                overflow: hidden;
+                font-size: 0px;
+                line-height: 0;
+                position: relative;
+                // width: 52px;
+                // padding-right: 16px;
+                height: 36px;
+                svg {
+                    transform: translateX(-52px);
+                    transition: transform 0.25s ease 0s;
+                    fill: #fff;
+                }
+            }
+        }
+        .content-menu {
+            display: flex;
+            align-items: center;
+            &__item {
+                list-style-type: none;
+                padding: 22px 8px;
+                a {
+                    font-weight: 500;
+                    color: black;
+                    font-size: 14px;
+                    line-height: 1;
+                    transition: color 0.25s ease 0s, padding 0.25s ease 0s;
+                    &:hover {
+                        color:#ff6900;
+                    }
+                }
+            }
+        }
+    }
+    .fixed-cart {
+        .fixed-cart__btn {
+            background: #ff6900;
+            color: #fff;
+            height: 50px;
+            padding: 8px 20px;
+            font-size: 16px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            .btn-line {
+                height: 24px;
+                width: 1px;
+                margin: 0px 12px;
+                background: rgb(255, 255, 255);
+                opacity: 0.4;
+            }
+            svg {
+                display: none;
+            }
+            .btn-quantity {
+                width: 15px;
+            }
+            &:hover {
+                background-color: #e86100;
+                color: #fff;
+                svg {
+                    display: block;
+                    width: 15px;
+                }
+                .btn-quantity {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes stickyHeaderAnimation {
+    0% {transform: translateY(-80px);} 
+    100% {transform: translateY(0);} 
+}

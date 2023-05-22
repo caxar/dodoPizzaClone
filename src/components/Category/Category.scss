@@ -1,0 +1,46 @@
+@import "../../css-config/mixins.scss";
+
+.category {
+    margin-bottom: 50px;
+}
+
+.category-content {
+    &__title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        margin: 18px 0px;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .content-wrapper__item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 280px;
+            height: 112px;
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            transition: box-shadow 150ms ease-out;
+            cursor: pointer;
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.22) 0px 5px 15px 0px; 
+            }
+            .wrapper-item__img {
+                width: 90px;
+                img {
+                    width: 100%;
+                }
+            }
+            .wrapper-item__text {
+                padding-left: 10px;
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+}

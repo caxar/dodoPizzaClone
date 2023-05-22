@@ -1,0 +1,132 @@
+@import "../../css-config/mixins.scss";
+
+
+.cart-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 110;
+    .cart-bg {
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all .3s ease;
+    }
+    .cart-content {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        animation: cartShow 0.3s ease forwards;
+        @include md {
+            width: 420px;
+        }
+        &.showMenuCart {
+            transform: translateX(0%);
+            animation: cartShow 0.3s ease forwards;
+        }
+        .cart-close {
+            position: absolute;
+            position: absolute;
+            top: 45%;
+            left: -45px;
+            color: #fff;
+            cursor: pointer;
+            svg {
+                font-size: 40px;
+                transition:  all .3s ease;
+            }
+            &:hover {
+                svg {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        .cart-empty {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+            background-color: #fff;
+            padding: 15px 30px;
+            &__img {
+                margin-bottom: 15px;
+                width: 100%;
+                img {
+                    width: 80%;
+                }
+            }
+            &__title {
+                font-size: 25px;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+            &__desc {
+                font-size: 15px;
+                width: 269px;
+                font-weight: 400;
+            }
+        }
+        .cart-main {
+            width: 100%;
+            height: 100%;
+            background: #f3f3f7;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .cart-header {
+                padding: 15px 20px;
+                // margin-bottom: 10px;
+                .cart-header__text {
+                    font-size: 21px;
+                }
+            }
+            .cart-footer {
+                background: #fff;
+                padding: 15px 20px;
+                .cart-footer__subtotal {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    .cart-subtotal__text {
+                        font-size: 18px;
+                    }
+                }
+                .cart-footer__btn {
+                    button {
+                        position: relative;
+                        width: 100%;
+                        padding: 26px 0;
+                        line-height: 0px;   
+                        background: #ff6900;
+                        color: #fff;
+                        svg {
+                            position: absolute; 
+                            right: 20px;
+                            top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes showCart {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(0%);}
+}

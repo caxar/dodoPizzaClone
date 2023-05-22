@@ -1,0 +1,135 @@
+@import "../../css-config/mixins.scss";
+
+.header {
+    width: 100%;
+    padding: 20px 0;
+    height: 86px;
+    position: relative;
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        .header-content__left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-left__logo svg {
+            width: 250px;
+            margin-right: 35px;
+            cursor: pointer;
+        }
+        .header-left__delivery {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .left-delivery__title {
+                font-size: 18px;
+                span {
+                    color: #ff6900;
+                }
+            }
+            .left-delivery__rate {
+                position: relative;
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                font-weight: 500;
+                &:hover {
+                    .rate-show {
+                        opacity: 1;
+                        z-index: 25;
+                        transform: translateY(20px);
+                    }
+                }
+                svg {
+                    margin-left: 3px;
+                }
+                .rate-show {
+                    position: absolute;
+                    width: 360px;
+                    height: 150px;
+                    border-radius: 20px;
+                    background: #373535;
+                    color: #fbfbfb;
+                    padding: 15px 20px;
+                    top: 15px;
+                    left: -120px;
+                    opacity: 0;
+                    z-index: -150;
+                    transform: translateY(0px);
+                    transition-duration: 200ms;
+                    transition-timing-function: ease-in-out;
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        border: 11px solid transparent;
+                        border-bottom: 11px solid #373535;
+                        position: absolute;
+                        top: -20px;
+                        left: 165px;
+                    }
+                    &__title {
+                        font-size: 25px;
+                    }
+                    &__desc {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .header-content__right {
+            display: flex;
+            align-items: center;
+            .header-right__coin {
+                margin-right: 30px;
+                text-align: center;
+                svg {
+                    width: 28px;
+                    height: 28px;
+                    transition-property: all;
+                    transition: all ease .2s;
+                    path {
+                        transition-property: all;
+                        transition: all ease .2s;
+                    }
+                }
+                p {
+                    margin-top: -5px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+                &:hover {
+                    cursor: pointer;
+                    p {
+                        color:#ff6900;
+                    }
+                    svg {
+                        transform: translateY(-3px);
+                        path {
+                            fill: #ff6900;
+                        }
+                    }
+                }
+            }
+            .header-right__btn {
+                height: 32px;
+                padding: 8px 16px;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 16px;
+                background: #f3f3f7;
+                color: #5c6370;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
